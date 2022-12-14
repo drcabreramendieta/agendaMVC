@@ -5,6 +5,7 @@
  */
 package controlador;
 import modelos.ModeloAgenda;
+import modelos.ModeloTabla;
 import vistas.Ventana;
 import vistas.Ventana1;
 
@@ -20,6 +21,10 @@ public class Principal {
         RemoverListener rl = new RemoverListener(v,m);
         v.registerButtonsListeners(al, rl);
         v.registerListModel(m);
+        
+        ModeloTabla mt = new ModeloTabla(m);
+        v.registerTableModel(mt);
+        
         ((Ventana1)v).setVisible(true);
     }
 }
